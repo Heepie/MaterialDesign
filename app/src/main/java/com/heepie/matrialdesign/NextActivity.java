@@ -72,19 +72,12 @@ public class NextActivity extends AppCompatActivity {
         @StyleRes int styleResId;
 
         switch (colorResId) {
-            case R.color.theme_yellow_primary_dark:
-                styleResId = R.style.MaterialAnimations_Yellow;
-                break;
-
-            case R.color.theme_red_primary_dark:
-                styleResId = R.style.MaterialAnimations_Red;
-                break;
-
-            default:
-                styleResId = R.style.MaterialAnimations;
-                break;
+            case R.color.theme_red_primary_dark:    styleResId = R.style.MaterialAnimations_Red;    break;
+            case R.color.theme_blue_primary_dark:   styleResId = R.style.MaterialAnimations_Blue;   break;
+            case R.color.theme_green_primary_dark:  styleResId = R.style.MaterialAnimations_Green;  break;
+            case R.color.theme_yellow_primary_dark: styleResId = R.style.MaterialAnimations_Yellow; break;
+            default:                                styleResId = R.style.MaterialAnimations;        break;
         }
-
         setTheme(styleResId);
     }
 

@@ -20,10 +20,10 @@ public class RecyclerMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recycler_main);
-
-        initView();
         makeDummyData();
+
+        setContentView(R.layout.recycler_main);
+        initView();
         initRecyclerView();
 
     }
@@ -43,12 +43,10 @@ public class RecyclerMainActivity extends AppCompatActivity {
 
     private void makeDummyData() {
         data = Arrays.asList(
-                new Item(android.R.color.holo_orange_light, "Hello"),
-                new Item(android.R.color.holo_blue_dark, "Heepie"),
-                new Item(android.R.color.holo_red_light, "YoLo"),
-                new Item(android.R.color.holo_green_light, "GooD")
+                new Item(R.color.theme_yellow_primary_dark, "Hello"),
+                new Item(R.color.theme_blue_primary_dark, "Heepie"),
+                new Item(R.color.theme_red_primary_dark, "YoLo"),
+                new Item(R.color.theme_green_primary_dark, "GooD")
         );
     }
-
-
 }

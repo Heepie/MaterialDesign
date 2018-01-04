@@ -47,6 +47,24 @@
         <item name="android:colorAccent">@color/theme_red_accent</item>
     </style>
 
+    <style name="MaterialAnimations.Blue" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_blue_background</item>
+        <item name="android:colorPrimaryDark">@color/theme_blue_primary</item>
+        <item name="android:textColorPrimary">@color/theme_blue_text</item>
+        <item name="android:statusBarColor">@color/theme_blue_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_blue_background</item>
+        <item name="android:colorAccent">@color/theme_blue_accent</item>
+    </style>
+
+    <style name="MaterialAnimations.Green" parent="MaterialAnimations">
+        <item name="android:colorPrimary">@color/theme_green_background</item>
+        <item name="android:colorPrimaryDark">@color/theme_green_primary</item>
+        <item name="android:textColorPrimary">@color/theme_green_text</item>
+        <item name="android:statusBarColor">@color/theme_green_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_green_background</item>
+        <item name="android:colorAccent">@color/theme_green_accent</item>
+    </style>
+
     <style name="CircleImage">
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">50dp</item>

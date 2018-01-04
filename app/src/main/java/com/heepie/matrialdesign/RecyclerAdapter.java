@@ -2,9 +2,12 @@ package com.heepie.matrialdesign;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +33,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
 
     public void setDataAndRefresh(List<Item> mData) {
         this.mData = mData;
+//        for (Item item : mData)
+//            Log.d("RecyclerAdapter", "setDataAndRefresh: " + item.getName());
+
         notifyDataSetChanged();
     }
 
@@ -42,6 +48,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
+        Log.d("onBindViewHolder", "onBindViewHolder: " + mData.get(position).getName());
         holder.setItem(mData.get(position));
         holder.setDataToScreen();
     }
@@ -54,42 +61,44 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
     }
 
     class Holder extends RecyclerView.ViewHolder {
+        private View layout, sharedTxt, sharedImg;
         private Item mItem;
-        private View imgView;
-        private View txtView;
         Intent intent;
 
         public Holder(View itemView) {
             super(itemView);
-            imgView = itemView.findViewById(R.id.imgView);
-            txtView = itemView.findViewById(R.id.txtView);
+            layout = itemView.findViewById(R.id.layout);
+            sharedImg = itemView.findViewById(R.id.shared_img);
+            sharedTxt = itemView.findViewById(R.id.shared_txt);
 
             initListener();
         }
 
         private void initListener() {
-            Pair<View, String> pair1 = Pair.create(imgView, imgView.getTransitionName());
-//            Pair<View, String> pair2 = Pair.create(txtView, txtView.getTransitionName());
+            intent = new Intent(activity, NextActivity.class);
 
-            final ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pair1);
-
-            intent = new Intent(activity, DetailActivity.class);
-            imgView.setOnClickListener(new View.OnClickListener() {
+            layout.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(View v) {
-                    v.getContext().startActivity(intent, options.toBundle());
+                    Pair<View, String> pair1 = Pair.create(sharedImg, sharedImg.getTransitionName());
+                    Pair<View, String> pair2 = Pair.create(sharedTxt, sharedTxt.getTransitionName());
+
+                    ActivityOptionsCompat transitionActivityOptions
+                            = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pair1, pair2);
+                    activity.startActivity(intent, transitionActivityOptions.toBundle());
                 }
             });
         }
 
-        public void setItem(Item mItem) {
-            this.mItem = mItem;
-            intent.putExtra("item", mItem);
+        public void setItem(Item item) {
+            this.mItem = item;
+            intent.putExtra("model", item);
         }
 
         public void setDataToScreen() {
-            ((CircleImageView)imgView).setImageResource(mItem.getColorResId());
-            ((TextView)txtView).setText(mItem.getName());
+            ((CircleImageView)sharedImg).setImageResource(mItem.getColorResId());
+            ((TextView)sharedTxt).setText(mItem.getName());
         }
     }
 }
