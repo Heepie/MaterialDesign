@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MatrialDesign</string>
+    <string name="shared_item">SharedItem</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="shared_img_view">SharedImg</string>
+    <string name="shared_txt_view">SharedTxt</string>
+</resources>
