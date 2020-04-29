@@ -28,7 +28,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:src="@android:color/holo_orange_dark"
-            android:transitionName="@string/shared_item"
+            android:transitionName="@string/shared_img_view"
             />
 
         <TextView

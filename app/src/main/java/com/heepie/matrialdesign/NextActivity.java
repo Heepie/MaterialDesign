@@ -26,8 +26,6 @@ public class NextActivity extends AppCompatActivity {
     private TextView txtView;
     private Item mItem;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +40,8 @@ public class NextActivity extends AppCompatActivity {
 
     private void animateRevealShow(View viewRoot, @ColorRes int colorResId) {
         viewRoot.setBackgroundResource(colorResId);
-        // 시작 위치 설정 x,y
+
+        // 번지는 시작 위치 설정 x,y
         int cx = (viewRoot.getLeft() + viewRoot.getRight()) / 2;
         int cy = (viewRoot.getTop() + viewRoot.getBottom()) / 2;
         int finalRadius = Math.max(viewRoot.getWidth(), viewRoot.getHeight());
@@ -68,6 +67,7 @@ public class NextActivity extends AppCompatActivity {
         setCustomTheme(mItem.getColorResId());
     }
 
+    // item에 따른 테마 설정
     private void setCustomTheme(@ColorRes int colorResId) {
         @StyleRes int styleResId;
 

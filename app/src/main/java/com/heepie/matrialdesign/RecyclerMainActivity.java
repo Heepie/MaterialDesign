@@ -25,7 +25,6 @@ public class RecyclerMainActivity extends AppCompatActivity {
         setContentView(R.layout.recycler_main);
         initView();
         initRecyclerView();
-
     }
 
     private void initView() {

@@ -33,9 +33,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
 
     public void setDataAndRefresh(List<Item> mData) {
         this.mData = mData;
-//        for (Item item : mData)
-//            Log.d("RecyclerAdapter", "setDataAndRefresh: " + item.getName());
-
         notifyDataSetChanged();
     }
 
