@@ -11,7 +11,7 @@ import com.heepie.matrialdesign.model.Item;
 import java.util.Arrays;
 import java.util.List;
 
-public class RecyclerMainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private TextView titleTxtView;
@@ -22,7 +22,7 @@ public class RecyclerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         makeDummyData();
 
-        setContentView(R.layout.recycler_main);
+        setContentView(R.layout.activity_main);
         initView();
         initRecyclerView();
     }

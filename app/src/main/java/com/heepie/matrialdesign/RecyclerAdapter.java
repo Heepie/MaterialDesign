@@ -72,7 +72,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
         }
 
         private void initListener() {
-            intent = new Intent(activity, NextActivity.class);
+            intent = new Intent(activity, DetailActivity.class);
 
             layout.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

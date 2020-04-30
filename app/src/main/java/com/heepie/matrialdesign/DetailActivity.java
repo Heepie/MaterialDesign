@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.StyleRes;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
@@ -19,7 +17,7 @@ import com.heepie.matrialdesign.model.Item;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class NextActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
     private CircleImageView imgView;
     private FrameLayout background;
@@ -31,7 +29,7 @@ public class NextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // setTheme 메소드 설정을 위해 onCreate 후 바로 실행
         initData();
-        setContentView(R.layout.activity_next);
+        setContentView(R.layout.activity_detail);
 
         initView();
         initListener();
