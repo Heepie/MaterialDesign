@@ -1,20 +1,21 @@
-package com.heepie.matrialdesign;
+package me.heepie.materialdesign;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
-import com.heepie.matrialdesign.model.Item;
+import me.heepie.materialdesign.model.Item;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class RecyclerMainActivity extends AppCompatActivity {
+/**
+ * Created by Heepie on 2018. 1. 3.
+ */
+public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private TextView titleTxtView;
     private List<Item> data;
 
     @Override
@@ -22,15 +23,13 @@ public class RecyclerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         makeDummyData();
 
-        setContentView(R.layout.recycler_main);
+        setContentView(R.layout.activity_main);
         initView();
         initRecyclerView();
-
     }
 
     private void initView() {
         recyclerView = findViewById(R.id.recyclerView);
-        titleTxtView = findViewById(R.id.titleTxtView);
     }
 
     private void initRecyclerView() {

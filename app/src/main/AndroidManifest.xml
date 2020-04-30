@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.heepie.matrialdesign">
+    package="me.heepie.materialdesign">
 
     <application
         android:allowBackup="true"
@@ -9,22 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MaterialAnimations">
-        <activity android:name=".MainActivity">
-
-        </activity>
         <activity
-            android:name=".NextActivity"
+            android:name="me.heepie.materialdesign.DetailActivity"
             />
-        <activity android:name=".RecyclerMainActivity">
+        <activity android:name="me.heepie.materialdesign.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DetailActivity"
-            android:label="@string/title_activity_detail"></activity>
     </application>
 
 </manifest>

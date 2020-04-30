@@ -4,27 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.heepie.matrialdesign.DetailActivity">
+    tools:context="com.heepie.materialdesign.me.heepie.materialdesign.DetailActivity">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        style="@style/MainCircleImage"
-        android:id="@+id/imgView"
-        android:layout_marginTop="32dp"
-        android:transitionName="@string/shared_img_view"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:contentInsetStart="0dp"
+        >
 
-    <TextView
-        style="@style/DefaultText"
-        android:id="@+id/txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
-        android:layout_marginTop="160dp"
-        android:transitionName="@string/shared_txt_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgView" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:visibility="visible"
+                    android:id="@+id/imgView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@android:color/holo_orange_dark"
+                    android:transitionName="@string/shared_img_view"
+                    />
+
+            </FrameLayout>
+
+            <TextView
+                style="@style/DefaultText"
+                android:id="@+id/txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:transitionName="@string/shared_txt_view" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
 </android.support.constraint.ConstraintLayout>
