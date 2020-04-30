@@ -20,18 +20,17 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by Heepie on 2018. 1. 3..
+ * Created by Heepie on 2018. 1. 3.
  */
-
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder> {
-    Activity activity;
-    List<Item> mData;
+    private Activity activity;
+    private List<Item> mData;
 
-    public RecyclerAdapter(Activity activity) {
+    RecyclerAdapter(Activity activity) {
         this.activity = activity;
     }
 
-    public void setDataAndRefresh(List<Item> mData) {
+    void setDataAndRefresh(List<Item> mData) {
         this.mData = mData;
         notifyDataSetChanged();
     }
@@ -39,7 +38,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                                  .inflate(R.layout.item_post, parent, false);
+                .inflate(R.layout.item_post, parent, false);
         return new Holder(view);
     }
 
@@ -52,8 +51,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
 
     @Override
     public int getItemCount() {
-        if (mData == null)
-            return 0;
+        if (mData == null) return 0;
         return mData.size();
     }
 
@@ -62,7 +60,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
         private Item mItem;
         Intent intent;
 
-        public Holder(View itemView) {
+        Holder(View itemView) {
             super(itemView);
             layout = itemView.findViewById(R.id.layout);
             sharedImg = itemView.findViewById(R.id.shared_img);
@@ -88,14 +86,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Holder
             });
         }
 
-        public void setItem(Item item) {
+        private void setItem(Item item) {
             this.mItem = item;
             intent.putExtra("model", item);
         }
 
-        public void setDataToScreen() {
-            ((CircleImageView)sharedImg).setImageResource(mItem.getColorResId());
-            ((TextView)sharedTxt).setText(mItem.getName());
+        private void setDataToScreen() {
+            ((CircleImageView) sharedImg).setImageResource(mItem.getColorResId());
+            ((TextView) sharedTxt).setText(mItem.getName());
         }
     }
 }

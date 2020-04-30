@@ -17,17 +17,18 @@ import com.heepie.matrialdesign.model.Item;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * Created by Heepie on 2018. 1. 3.
+ */
 public class DetailActivity extends AppCompatActivity {
 
-    private CircleImageView imgView;
     private FrameLayout background;
-    private TextView txtView;
-    private Item mItem;
+    private Item item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setTheme 메소드 설정을 위해 onCreate 후 바로 실행
+        // Init item and set theme
         initData();
         setContentView(R.layout.activity_detail);
 
@@ -39,7 +40,7 @@ public class DetailActivity extends AppCompatActivity {
     private void animateRevealShow(View viewRoot, @ColorRes int colorResId) {
         viewRoot.setBackgroundResource(colorResId);
 
-        // 번지는 시작 위치 설정 x,y
+        // Set lnk position
         int cx = (viewRoot.getLeft() + viewRoot.getRight()) / 2;
         int cy = (viewRoot.getTop() + viewRoot.getBottom()) / 2;
         int finalRadius = Math.max(viewRoot.getWidth(), viewRoot.getHeight());
@@ -53,28 +54,37 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initView() {
         background = findViewById(R.id.background);
-        imgView = findViewById(R.id.imgView);
-        txtView = findViewById(R.id.txtView);
+        CircleImageView imgView = findViewById(R.id.imgView);
+        TextView txtView = findViewById(R.id.txtView);
 
-        imgView.setImageResource(mItem.getColorResId());
-        txtView.setText(mItem.getName());
+        imgView.setImageResource(item.getColorResId());
+        txtView.setText(item.getName());
     }
 
     private void initData() {
-        mItem = getIntent().getParcelableExtra("model");
-        setCustomTheme(mItem.getColorResId());
+        item = getIntent().getParcelableExtra("model");
+        setCustomTheme(item.getColorResId());
     }
 
-    // item에 따른 테마 설정
     private void setCustomTheme(@ColorRes int colorResId) {
         @StyleRes int styleResId;
 
         switch (colorResId) {
-            case R.color.theme_red_primary_dark:    styleResId = R.style.MaterialAnimations_Red;    break;
-            case R.color.theme_blue_primary_dark:   styleResId = R.style.MaterialAnimations_Blue;   break;
-            case R.color.theme_green_primary_dark:  styleResId = R.style.MaterialAnimations_Green;  break;
-            case R.color.theme_yellow_primary_dark: styleResId = R.style.MaterialAnimations_Yellow; break;
-            default:                                styleResId = R.style.MaterialAnimations;        break;
+            case R.color.theme_red_primary_dark:
+                styleResId = R.style.MaterialAnimations_Red;
+                break;
+            case R.color.theme_blue_primary_dark:
+                styleResId = R.style.MaterialAnimations_Blue;
+                break;
+            case R.color.theme_green_primary_dark:
+                styleResId = R.style.MaterialAnimations_Green;
+                break;
+            case R.color.theme_yellow_primary_dark:
+                styleResId = R.style.MaterialAnimations_Yellow;
+                break;
+            default:
+                styleResId = R.style.MaterialAnimations;
+                break;
         }
         setTheme(styleResId);
     }
@@ -90,7 +100,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionEnd(Transition transition) {
-                animateRevealShow(background, mItem.getColorResId());
+                animateRevealShow(background, item.getColorResId());
             }
 
             @Override

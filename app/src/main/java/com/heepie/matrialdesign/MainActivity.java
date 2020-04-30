@@ -11,10 +11,12 @@ import com.heepie.matrialdesign.model.Item;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Created by Heepie on 2018. 1. 3.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private TextView titleTxtView;
     private List<Item> data;
 
     @Override
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         recyclerView = findViewById(R.id.recyclerView);
-        titleTxtView = findViewById(R.id.titleTxtView);
     }
 
     private void initRecyclerView() {
