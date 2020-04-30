@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.heepie.matrialdesign">
+    package="me.heepie.materialdesign">
 
     <application
         android:allowBackup="true"
@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/MaterialAnimations">
         <activity
-            android:name=".DetailActivity"
+            android:name="me.heepie.materialdesign.DetailActivity"
             />
-        <activity android:name=".MainActivity">
+        <activity android:name="me.heepie.materialdesign.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.heepie.matrialdesign;
+package me.heepie.materialdesign;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.heepie.matrialdesign.model.Item;
+import me.heepie.materialdesign.model.Item;
 
 import java.util.List;
 

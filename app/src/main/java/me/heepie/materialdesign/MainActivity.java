@@ -1,12 +1,11 @@
-package com.heepie.matrialdesign;
+package me.heepie.materialdesign;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
-import com.heepie.matrialdesign.model.Item;
+import me.heepie.materialdesign.model.Item;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.heepie.matrialdesign;
+package me.heepie.materialdesign;
 
 import android.animation.Animator;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.heepie.matrialdesign.model.Item;
+import me.heepie.materialdesign.model.Item;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

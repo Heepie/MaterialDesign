@@ -1,4 +1,4 @@
-package com.heepie.matrialdesign;
+package me.heepie.materialdesign;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

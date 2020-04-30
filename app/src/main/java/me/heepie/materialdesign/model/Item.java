@@ -1,4 +1,4 @@
-package com.heepie.matrialdesign.model;
+package me.heepie.materialdesign.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
